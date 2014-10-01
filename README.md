@@ -9,7 +9,10 @@ Please contact hoameng@upenn.edu with any questions, bugs, suggestions, etc!
 Included
 -----------
 *getAllAnnots.m*	- get all annotations from a given dataset and annotation layer
-*removeAnnots.m*	- remove specified annotations from a IEEGDataset(s)
+
+*removeAnnots.m*	- remove specified annotations from IEEGDataset(s)
+
 *uploadAnnotations.m*	- upload annotations to a given layer - can be used in conjunction with detection algorithms in PortalMatlabAlgos
+
 *viewannots.m*		- matlab GUI to view and vet annotations
 	
