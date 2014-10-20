@@ -12,10 +12,10 @@ function uploadAnnotations(dataset,layerName,eventTimesUSec,eventChannels,label)
 
 
 try 
-    fprintf('\nRemoving existing spike layer\n');
+    fprintf('\nRemoving existing layer\n');
     dataset.removeAnnLayer(layerName);
 catch 
-    fprintf('No existing spike layer\n');
+    fprintf('No existing layer\n');
 end
 annLayer = dataset.addAnnLayer(layerName);
 uniqueAnnotChannels = unique(eventChannels);
@@ -23,7 +23,7 @@ ann = [];
 fprintf('Creating annotations...');
 for i = 1:numel(uniqueAnnotChannels)
     tmpChan = uniqueAnnotChannels(i);
-    ann = [ann IEEGAnnotation.createAnnotations(eventTimesUSec(eventChannels==tmpChan,1),eventTimesUSec(eventChannels==tmpChan,1),'Event',label,dataset.channels(tmpChan))];
+    ann = [ann IEEGAnnotation.createAnnotations(eventTimesUSec(eventChannels==tmpChan,1),eventTimesUSec(eventChannels==tmpChan,2),'Event',label,dataset.channels(tmpChan))];
 end
 fprintf('done!\n');
 numAnnot = numel(ann);
